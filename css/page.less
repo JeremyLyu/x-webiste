@@ -1,0 +1,134 @@
+@sizes: 128, 96, 64, 48, 42, 32, 16, 8, 0;
+@sizes1: 96, 78, 50, 36, 32, 28, 15, 6, 0;
+@sizes2: 72, 64, 40, 36, 32, 26, 14, 4, 0;
+@sizes3: 64, 50, 36, 32, 28, 20, 12, 2, 0;
+@sizesList: @sizes, @sizes1, @sizes2, @sizes3;
+
+@heights: 1000 800 600 400 200;
+@heights1: 900 720 466 360 200;
+@heights2: 810 648 350 324 200;
+@heights3: 729 584 264 292 200;
+@heightsList: @heights, @heights1, @heights2, @heights3;
+
+@screens: 992px 768px 576px 360px;
+
+.loopingMedia (@index) when (@index <=length(@screens)) {
+  @size: extract(@screens, @index);
+
+  @media screen and (max-width: @size) {
+    .loopingClass(1, @index);
+  }
+
+  .loopingMedia(@index + 1);
+}
+
+.loopingNormalClass(1);
+.loopingMedia(1);
+
+.loopingClass (@index, @sizeIndex) when (@index <=length(@sizes)) {
+  @size: extract(@sizes, @index);
+  @sizeContent: extract(extract(@sizesList, @sizeIndex), @index);
+  @height: extract(@heights, @index);
+  @heightContent: extract(extract(@heightsList, @sizeIndex), @index);
+
+  .x-mt-@{size} {
+    margin-top:~'@{sizeContent}px';
+  }
+
+  .x-mb-@{size} {
+    margin-bottom:~'@{sizeContent}px';
+  }
+
+  .x-ml-@{size} {
+    margin-left:~'@{sizeContent}px';
+  }
+
+  .x-mr-@{size} {
+    margin-right:~'@{sizeContent}px';
+  }
+
+  .x-pt-@{size} {
+    padding-top:~'@{sizeContent}px';
+  }
+
+  .x-pb-@{size} {
+    padding-bottom:~'@{sizeContent}px';
+  }
+
+  .x-pl-@{size} {
+    padding-left:~'@{sizeContent}px';
+  }
+
+  .x-pr-@{size} {
+    padding-right:~'@{sizeContent}px';
+  }
+
+  .x-fs-@{size} {
+    font-size:~'@{sizeContent}px';
+  }
+
+  .x-height-@{height} {
+    height:~'@{heightContent}px';
+  }
+
+  .loopingClass(@index + 1, @sizeIndex);
+}
+
+.loopingNormalClass (@index) when (@index <=length(@sizes)) {
+  @size: extract(@sizes, @index);
+  @height: extract(@heights, @index);
+
+  .x-mt-@{size} {
+    margin-top:~'@{size}px';
+  }
+
+  .x-mb-@{size} {
+    margin-bottom:~'@{size}px';
+  }
+
+  .x-ml-@{size} {
+    margin-left:~'@{size}px';
+  }
+
+  .x-mr-@{size} {
+    margin-right:~'@{size}px';
+  }
+
+  .x-pt-@{size} {
+    padding-top:~'@{size}px';
+  }
+
+  .x-pb-@{size} {
+    padding-bottom:~'@{size}px';
+  }
+
+  .x-pl-@{size} {
+    padding-left:~'@{size}px';
+  }
+
+  .x-pr-@{size} {
+    padding-right:~'@{size}px';
+  }
+
+  .x-fs-@{size} {
+    font-size:~'@{size}px';
+  }
+
+  .x-height-@{height} {
+    height:~'@{height}px';
+  }
+
+  .loopingNormalClass(@index + 1);
+}
+
+.x-fw-400 {
+  font-weight: 400;
+}
+
+.x-fw-500 {
+  font-weight: 500;
+}
+
+.x-fw-600 {
+  font-weight: 600;
+}

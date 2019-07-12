@@ -1,0 +1,71 @@
+div.x-border-hover {
+  height: 160px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.video-card-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.3);
+  transition: all 0.3s;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  opacity: 0;
+}
+
+.video-card-mask:hover {
+  opacity: 1;
+}
+
+.video-card {
+  height: 320px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  position: relative;
+}
+
+.snsicon {
+  font-size: 32px;
+}
+
+.index-heading {
+  font-size: 56px;
+  font-weight: 600;
+}
+
+.index-heading-white {
+  font-size: 56px;
+  color: white;
+  font-weight: 600;
+}
+
+.index-heading-small-white {
+  font-size: 32px;
+  color: white;
+  font-weight: 600;
+}
+
+.detailinfotitle {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.detailinfotitle-white {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.detailheader {
+  font-size: 60px;
+  font-weight: 600;
+}
+
