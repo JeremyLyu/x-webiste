@@ -1,14 +1,20 @@
-@sizes: 128, 96, 64, 48, 42, 32, 16, 8, 0;
-@sizes1: 96, 78, 50, 36, 32, 28, 15, 6, 0;
-@sizes2: 72, 64, 40, 36, 32, 26, 14, 4, 0;
-@sizes3: 64, 50, 36, 32, 28, 20, 12, 2, 0;
-@sizesList: @sizes, @sizes1, @sizes2, @sizes3;
+// @sizes: 128, 96, 64, 48, 42, 32, 16, 8, 0;
+// @sizes1: 96, 78, 50, 36, 32, 28, 15, 6, 0;
+// @sizes2: 72, 64, 40, 36, 32, 26, 14, 4, 0;
+// @sizes3: 64, 50, 36, 32, 28, 20, 12, 2, 0;
+// @sizesList: @sizes, @sizes1, @sizes2, @sizes3;
 
-@heights: 1000 800 600 400 200;
-@heights1: 900 720 466 360 200;
-@heights2: 810 648 350 324 200;
-@heights3: 729 584 264 292 200;
-@heightsList: @heights, @heights1, @heights2, @heights3;
+// @heights: 1000 800 600 400 200;
+// @heights1: 900 720 466 360 200;
+// @heights2: 810 648 350 324 200;
+// @heights3: 729 584 264 292 200;
+// @heightsList: @heights, @heights1, @heights2, @heights3;
+
+@sizes: 1000 800 600 512 400 320 256 128 96 64 48 40 32 24 20 16 8 0;
+@sizes1: 776 620 466 396 310 248 198 100 74 50 40 36 28 20 18 15 7 0;
+@sizes2: 584 466 350 298 232 186 148 76 56 38 32 28 24 18 16 14 6 0;
+@sizes3: 365 292 264 186 145 128 92 48 36 24 20 22 16 15 14 12 5 0;
+@sizesList: @sizes, @sizes1, @sizes2, @sizes3;
 
 @screens: 992px 768px 576px 360px;
 
@@ -28,8 +34,8 @@
 .loopingClass (@index, @sizeIndex) when (@index <=length(@sizes)) {
   @size: extract(@sizes, @index);
   @sizeContent: extract(extract(@sizesList, @sizeIndex), @index);
-  @height: extract(@heights, @index);
-  @heightContent: extract(extract(@heightsList, @sizeIndex), @index);
+  // @height: extract(@heights, @index);
+  // @heightContent: extract(extract(@heightsList, @sizeIndex), @index);
 
   .x-mt-@{size} {
     margin-top:~'@{sizeContent}px';
@@ -67,8 +73,8 @@
     font-size:~'@{sizeContent}px';
   }
 
-  .x-height-@{height} {
-    height:~'@{heightContent}px';
+  .x-height-@{size} {
+    height:~'@{sizeContent}px';
   }
 
   .loopingClass(@index + 1, @sizeIndex);
@@ -76,7 +82,7 @@
 
 .loopingNormalClass (@index) when (@index <=length(@sizes)) {
   @size: extract(@sizes, @index);
-  @height: extract(@heights, @index);
+  // @height: extract(@heights, @index);
 
   .x-mt-@{size} {
     margin-top:~'@{size}px';
@@ -114,11 +120,15 @@
     font-size:~'@{size}px';
   }
 
-  .x-height-@{height} {
-    height:~'@{height}px';
+  .x-height-@{size} {
+    height:~'@{size}px';
   }
 
   .loopingNormalClass(@index + 1);
+}
+
+.x-fw-300 {
+  font-weight: 300;
 }
 
 .x-fw-400 {
@@ -129,6 +139,10 @@
   font-weight: 500;
 }
 
-.x-fw-600 {
-  font-weight: 600;
+.x-fw-700 {
+  font-weight: 700;
+}
+
+.x-fw-900 {
+  font-weight: 900;
 }
