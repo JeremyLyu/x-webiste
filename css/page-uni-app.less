@@ -1,0 +1,156 @@
+
+@sizes: 1000 800 600 512 400 320 256 160 128 96 74 64 48 40 32 28 24 20 18 16 14 8 4 2 0;
+
+.loopingNormalClass(1);
+
+.loopingNormalClass (@index) when (@index <=length(@sizes)) {
+  @size: extract(@sizes, @index);
+
+  .x-mt-@{size} {
+    margin-top:~'@{size}upx' !important;
+  }
+
+  .x-mb-@{size} {
+    margin-bottom:~'@{size}upx' !important;
+  }
+
+  .x-ml-@{size} {
+    margin-left:~'@{size}upx' !important;
+  }
+
+  .x-mr-@{size} {
+    margin-right:~'@{size}upx' !important;
+  }
+
+  .x-pt-@{size} {
+    padding-top:~'@{size}upx' !important;
+  }
+
+  .x-pb-@{size} {
+    padding-bottom:~'@{size}upx' !important;
+  }
+
+  .x-pl-@{size} {
+    padding-left:~'@{size}upx' !important;
+  }
+
+  .x-pr-@{size} {
+    padding-right:~'@{size}upx' !important;
+  }
+
+  .x-fs-@{size} {
+    font-size:~'@{size}px' !important;
+  }
+
+  .x-height-@{size} {
+    height:~'@{size}px' !important;
+  }
+
+  .x-width-@{size} {
+    width:~'@{size}px' !important;
+  }
+
+
+  .loopingNormalClass(@index + 1);
+}
+
+.x-fw-300 {
+  font-weight: 300;
+}
+
+.x-fw-400 {
+  font-weight: 400;
+}
+
+.x-fw-500 {
+  font-weight: 500;
+}
+
+.x-fw-700 {
+  font-weight: 700;
+}
+
+.x-fw-900 {
+  font-weight: 900;
+}
+
+// 页面组件样式
+.error--text {
+  color: #ff5252 !important;
+  caret-color: #ff5252 !important;
+}
+
+.x-messages__wrapper {
+  transition: all 0.2s;
+}
+
+.email-error-notify {
+  margin-top: -16px;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.x-hover {
+  border-radius: 2px;
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.x-hover:hover {
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12) !important;
+}
+
+.x-hover:hover.bg-f9 {
+  background-color: #f5f5f5 !important;
+}
+
+.x-card {
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.06), 0px 2px 2px 0px rgba(0, 0, 0, 0.07), 0px 1px 5px 0px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+}
+
+.video-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.video-card-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  opacity: 0;
+}
+
+.video-card-mask:hover {
+  opacity: 1;
+}
+
+a.x-link,
+a.x-link:active,
+a.x-link:hover,
+a.x-link:link,
+a.x-link:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+}
+.x-list__tile__content {
+  text-align: left;
+  flex: 1 1 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}

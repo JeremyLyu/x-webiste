@@ -1,136 +1,53 @@
-// @sizes: 128, 96, 64, 48, 42, 32, 16, 8, 0;
-// @sizes1: 96, 78, 50, 36, 32, 28, 15, 6, 0;
-// @sizes2: 72, 64, 40, 36, 32, 26, 14, 4, 0;
-// @sizes3: 64, 50, 36, 32, 28, 20, 12, 2, 0;
-// @sizesList: @sizes, @sizes1, @sizes2, @sizes3;
-
-// @heights: 1000 800 600 400 200;
-// @heights1: 900 720 466 360 200;
-// @heights2: 810 648 350 324 200;
-// @heights3: 729 584 264 292 200;
-// @heightsList: @heights, @heights1, @heights2, @heights3;
 
 @sizes: 1000 800 600 512 400 320 256 160 128 96 74 64 48 40 32 28 24 20 18 16 14 8 4 2 0;
-@sizes1: 776 620 466 396 310 248 198 124 100 74 56 50 40 36 28 24 20 18 17 15 13 7 5 2 0;
-@sizes2: 584 466 350 298 232 186 148 92 76 56 42 38 32 28 24 20 18 16 16 14 12 6 3 2 0;
-@sizes3: 365 292 264 186 145 128 92 56 48 36 26 24 20 22 16 16 15 14 15 12 12 5 2 2 0;
-
-@sizesList: @sizes, @sizes1, @sizes2, @sizes3;
-
-@screens: 992px 768px 576px 360px;
-
-.loopingMedia (@index) when (@index <=length(@screens)) {
-  @size: extract(@screens, @index);
-
-  @media screen and (max-width: @size) {
-    .loopingClass(1, @index);
-  }
-
-  .loopingMedia(@index + 1);
-}
 
 .loopingNormalClass(1);
-.loopingMedia(1);
-
-.loopingClass (@index, @sizeIndex) when (@index <=length(@sizes)) {
-  @size: extract(@sizes, @index);
-  @sizeContent: extract(extract(@sizesList, @sizeIndex), @index);
-  // @height: extract(@heights, @index);
-  // @heightContent: extract(extract(@heightsList, @sizeIndex), @index);
-
-  .x-mt-@{size} {
-    margin-top:~'@{sizeContent}px';
-  }
-
-  .x-mb-@{size} {
-    margin-bottom:~'@{sizeContent}px';
-  }
-
-  .x-ml-@{size} {
-    margin-left:~'@{sizeContent}px';
-  }
-
-  .x-mr-@{size} {
-    margin-right:~'@{sizeContent}px';
-  }
-
-  .x-pt-@{size} {
-    padding-top:~'@{sizeContent}px';
-  }
-
-  .x-pb-@{size} {
-    padding-bottom:~'@{sizeContent}px';
-  }
-
-  .x-pl-@{size} {
-    padding-left:~'@{sizeContent}px';
-  }
-
-  .x-pr-@{size} {
-    padding-right:~'@{sizeContent}px';
-  }
-
-  .x-fs-@{size} {
-    font-size:~'@{sizeContent}px';
-  }
-
-  .x-height-@{size} {
-    height:~'@{sizeContent}px';
-  }
-
-  .x-width-@{size} {
-    width:~'@{sizeContent}px';
-  }
-
-  .loopingClass(@index + 1, @sizeIndex);
-}
 
 .loopingNormalClass (@index) when (@index <=length(@sizes)) {
   @size: extract(@sizes, @index);
-  // @height: extract(@heights, @index);
 
   .x-mt-@{size} {
-    margin-top:~'@{size}px';
+    margin-top:~'@{size}px' !important;
   }
 
   .x-mb-@{size} {
-    margin-bottom:~'@{size}px';
+    margin-bottom:~'@{size}px' !important;
   }
 
   .x-ml-@{size} {
-    margin-left:~'@{size}px';
+    margin-left:~'@{size}px' !important;
   }
 
   .x-mr-@{size} {
-    margin-right:~'@{size}px';
+    margin-right:~'@{size}px' !important;
   }
 
   .x-pt-@{size} {
-    padding-top:~'@{size}px';
+    padding-top:~'@{size}px' !important;
   }
 
   .x-pb-@{size} {
-    padding-bottom:~'@{size}px';
+    padding-bottom:~'@{size}px' !important;
   }
 
   .x-pl-@{size} {
-    padding-left:~'@{size}px';
+    padding-left:~'@{size}px' !important;
   }
 
   .x-pr-@{size} {
-    padding-right:~'@{size}px';
+    padding-right:~'@{size}px' !important;
   }
 
   .x-fs-@{size} {
-    font-size:~'@{size}px';
+    font-size:~'@{size}px' !important;
   }
 
   .x-height-@{size} {
-    height:~'@{size}px';
+    height:~'@{size}px' !important;
   }
 
   .x-width-@{size} {
-    width:~'@{size}px';
+    width:~'@{size}px' !important;
   }
 
 
@@ -259,4 +176,13 @@ a.x-link:visited {
 .list-item {
   display: flex;
   align-items: center;
+}
+.x-list__tile__content {
+  text-align: left;
+  flex: 1 1 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
 }
