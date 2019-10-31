@@ -328,6 +328,39 @@
 .x-width-96 {
   width: 96px !important;
 }
+.x-mt-82 {
+  margin-top: 82px !important;
+}
+.x-mb-82 {
+  margin-bottom: 82px !important;
+}
+.x-ml-82 {
+  margin-left: 82px !important;
+}
+.x-mr-82 {
+  margin-right: 82px !important;
+}
+.x-pt-82 {
+  padding-top: 82px !important;
+}
+.x-pb-82 {
+  padding-bottom: 82px !important;
+}
+.x-pl-82 {
+  padding-left: 82px !important;
+}
+.x-pr-82 {
+  padding-right: 82px !important;
+}
+.x-fs-82 {
+  font-size: 82px !important;
+}
+.x-height-82 {
+  height: 82px !important;
+}
+.x-width-82 {
+  width: 82px !important;
+}
 .x-mt-74 {
   margin-top: 74px !important;
 }
@@ -691,6 +724,72 @@
 .x-width-14 {
   width: 14px !important;
 }
+.x-mt-12 {
+  margin-top: 12px !important;
+}
+.x-mb-12 {
+  margin-bottom: 12px !important;
+}
+.x-ml-12 {
+  margin-left: 12px !important;
+}
+.x-mr-12 {
+  margin-right: 12px !important;
+}
+.x-pt-12 {
+  padding-top: 12px !important;
+}
+.x-pb-12 {
+  padding-bottom: 12px !important;
+}
+.x-pl-12 {
+  padding-left: 12px !important;
+}
+.x-pr-12 {
+  padding-right: 12px !important;
+}
+.x-fs-12 {
+  font-size: 12px !important;
+}
+.x-height-12 {
+  height: 12px !important;
+}
+.x-width-12 {
+  width: 12px !important;
+}
+.x-mt-10 {
+  margin-top: 10px !important;
+}
+.x-mb-10 {
+  margin-bottom: 10px !important;
+}
+.x-ml-10 {
+  margin-left: 10px !important;
+}
+.x-mr-10 {
+  margin-right: 10px !important;
+}
+.x-pt-10 {
+  padding-top: 10px !important;
+}
+.x-pb-10 {
+  padding-bottom: 10px !important;
+}
+.x-pl-10 {
+  padding-left: 10px !important;
+}
+.x-pr-10 {
+  padding-right: 10px !important;
+}
+.x-fs-10 {
+  font-size: 10px !important;
+}
+.x-height-10 {
+  height: 10px !important;
+}
+.x-width-10 {
+  width: 10px !important;
+}
 .x-mt-8 {
   margin-top: 8px !important;
 }
@@ -931,4 +1030,16 @@ a.x-link:visited {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+}
+
+.x-radius__normal {
+  border-radius: 4px;
+}
+
+.x-radius__large {
+  border-radius: 24px; 
+}
+
+.x-radius__circle {
+  border-radius: 50%;
 }
